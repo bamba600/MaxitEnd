@@ -11,7 +11,7 @@ services:
       cd public && php -S 0.0.0.0:$PORT index.php
     envVars:
       - key: DB_HOST
-        value: yamanote.proxy.rlwy.net
+        value: mysql-xxxxxx.railway.internal
       - key: DB_NAME
         value: railway
       - key: DB_USER
