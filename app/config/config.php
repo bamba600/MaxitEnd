@@ -1,14 +1,11 @@
 <?php
 
+use App\Config\Env;
+
 /**
  * Configuration de l'application utilisant les variables d'environnement
  * Ce fichier retourne un tableau de configuration
  */
-
-// S'assurer que la classe Env est chargée
-if (!class_exists('Env')) {
-    require_once __DIR__ . '/Env.php';
-}
 
 // Charger les variables d'environnement
 Env::load();
