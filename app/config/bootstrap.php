@@ -2,19 +2,16 @@
 use App\Core\App;
 use App\Core\Session;
 use App\Core\Database;
+use App\Config\Env;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-
-// Charger notre gestionnaire d'environnement personnalisé
-require_once __DIR__ . '/Env.php';
-require_once __DIR__ . '/Config.php';
 
 // Charger les variables d'environnement avec notre système
 try {
     Env::load();
 } catch (Exception $e) {
     // Fallback sur Dotenv si notre système échoue
-    if (class_exists('Dotenv\Dotenv')) {
+    if (class_exists('Dotenv\\Dotenv')) {
         $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
         $dotenv->load();
     } else {

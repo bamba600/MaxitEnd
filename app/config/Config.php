@@ -1,5 +1,7 @@
 <?php
 
+use App\Config\Env;
+
 /**
  * Classe Config - Gestionnaire de configuration centralisé
  */
@@ -17,10 +19,8 @@ class Config
             return;
         }
 
-        // S'assurer que la classe Env est chargée
-        if (!class_exists('Env')) {
-            require_once __DIR__ . '/Env.php';
-        }
+        // Charger les variables d'environnement
+        Env::load();
         
         // Charger la configuration complète
         self::$config = require __DIR__ . '/config.php';
