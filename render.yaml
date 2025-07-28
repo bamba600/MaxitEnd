@@ -11,7 +11,7 @@ services:
       cd public && php -S 0.0.0.0:$PORT index.php
     envVars:
       - key: DB_HOST
-        value: <collez ici le vrai host Railway>
+        value: mysql-production-12345.up.railway.app
       - key: DB_NAME
         value: railway
       - key: DB_USER
