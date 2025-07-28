@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: maxit-app
+    env: php
+    plan: free
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      mkdir -p public/uploads
+      chmod 755 public/uploads
+    startCommand: |
+      cd public && php -S 0.0.0.0:$PORT index.php
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: DB_DRIVER
+        value: mysql
+      - key: UPLOAD_DIR
+        value: public/uploads
+      - key: UPLOAD_MAX_SIZE
+        value: 5242880
+    # Variables d'environnement à configurer dans le dashboard Render :
+    # DB_HOST, DB_NAME, DB_USER, DB_PASS, APP_URL, AUTH_URL

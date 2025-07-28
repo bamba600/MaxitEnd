@@ -1,0 +1,47 @@
+# Vendor (Composer dependencies)
+/vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Upload directories (you might want to keep structure but not content)
+/public/uploads/*
+!/public/uploads/.gitkeep
+
+# Cache directories
+cache/
+tmp/
+
+# Node modules (if you use any frontend tools)
+node_modules/
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Database dumps
+*.sql
+*.sqlite
