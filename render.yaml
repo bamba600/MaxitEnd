@@ -20,5 +20,7 @@ services:
         value: public/uploads
       - key: UPLOAD_MAX_SIZE
         value: 5242880
+      - key: AUTH_URL
+        value: https://appwoyofal-qljz.onrender.com
     # Variables d'environnement à configurer dans le dashboard Render :
-    # DB_HOST, DB_NAME, DB_USER, DB_PASS, APP_URL, AUTH_URL
+    # DB_HOST, DB_NAME, DB_USER, DB_PASS
