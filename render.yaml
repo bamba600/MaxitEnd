@@ -16,11 +16,19 @@ services:
         value: false
       - key: DB_DRIVER
         value: mysql
+      - key: DB_HOST
+        value: yamanote.proxy.rlwy.net
+      - key: DB_NAME
+        value: railway
+      - key: DB_USER
+        value: root
+      - key: DB_PASS
+        value: eZkXltxHmZcJPrredZqdnxPXxfmWnfgH
+      - key: MYSQL_PORT
+        value: 30123
       - key: UPLOAD_DIR
         value: public/uploads
       - key: UPLOAD_MAX_SIZE
         value: 5242880
       - key: AUTH_URL
         value: https://appwoyofal-qljz.onrender.com
-    # Variables d'environnement à configurer dans le dashboard Render :
-    # DB_HOST, DB_NAME, DB_USER, DB_PASS
