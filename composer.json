@@ -1,0 +1,23 @@
+{
+    "name": "bamba/proget_m-axit",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "App\\Core\\": "app/core/",
+            "App\\Config\\": "app/config/"
+        },
+        "classmap": [
+            "app/core",
+            "src"
+        ]
+    },
+    "authors": [
+        {
+            "name": "bamba100000",
+            "email": "nafissatou3582@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
