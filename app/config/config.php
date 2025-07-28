@@ -14,7 +14,7 @@ Env::load();
 return [
     // Base de données
     'database' => [
-        'default' => Env::get('DB_DRIVER', 'mysql'),
+        'default' => Env::get('DB_DRIVER', 'pgsql'),
         'connections' => [
             'mysql' => [
                 'driver' => 'mysql',
@@ -29,11 +29,11 @@ return [
             ],
             'pgsql' => [
                 'driver' => 'pgsql',
-                'host' => Env::get('PGSQL_HOST', 'localhost'),
-                'port' => Env::get('PGSQL_PORT', '5432'),
-                'database' => Env::get('PGSQL_DATABASE', 'maxit'),
+                'host' => Env::get('PGSQL_HOST', 'centerbeam.proxy.rlwy.net'),
+                'port' => Env::get('PGSQL_PORT', '12770'),
+                'database' => Env::get('PGSQL_DATABASE', 'railway'),
                 'username' => Env::get('PGSQL_USERNAME', 'postgres'),
-                'password' => Env::get('PGSQL_PASSWORD', ''),
+                'password' => Env::get('PGSQL_PASSWORD', 'CtBwqTXYTwWaVUxZFKXUqhbWGAlHoNeb'),
                 'charset' => Env::get('PGSQL_CHARSET', 'utf8'),
                 'dsn' => Env::get('DSN_PGSQL'),
             ]

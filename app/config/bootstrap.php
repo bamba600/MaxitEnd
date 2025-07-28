@@ -18,12 +18,21 @@ try {
 // Charger la configuration
 $config = require_once __DIR__ . '/config.php';
 
-// Définir des constantes à partir de la configuration
-define('DB_HOST', Env::get('DB_HOST', 'localhost'));
-define('DB_NAME', Env::get('DB_NAME', 'maxit'));
-define('DB_USER', Env::get('DB_USER', 'root'));
-define('DB_PASS', Env::get('DB_PASS', ''));
-define('DB_DRIVER', Env::get('DB_DRIVER', 'mysql'));
+// Définir des constantes dynamiquement selon le driver
+$driver = Env::get('DB_DRIVER', 'mysql');
+if ($driver === 'mysql') {
+    define('DB_HOST', Env::get('DB_HOST', 'localhost'));
+    define('DB_NAME', Env::get('DB_NAME', 'maxit'));
+    define('DB_USER', Env::get('DB_USER', 'root'));
+    define('DB_PASS', Env::get('DB_PASS', ''));
+    define('DB_DRIVER', 'mysql');
+} elseif ($driver === 'pgsql') {
+    define('DB_HOST', Env::get('PGSQL_HOST', 'localhost'));
+    define('DB_NAME', Env::get('PGSQL_DATABASE', 'railway'));
+    define('DB_USER', Env::get('PGSQL_USERNAME', 'postgres'));
+    define('DB_PASS', Env::get('PGSQL_PASSWORD', ''));
+    define('DB_DRIVER', 'pgsql');
+}
 define('AUTH_URL', Env::get('AUTH_URL', 'http://localhost:8000'));
 
 // Nouvelles constantes pour les uploads
