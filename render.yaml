@@ -10,12 +10,6 @@ services:
     startCommand: |
       cd public && php -S 0.0.0.0:$PORT index.php
     envVars:
-      - key: APP_ENV
-        value: production
-      - key: APP_DEBUG
-        value: false
-      - key: DB_DRIVER
-        value: mysql
       - key: DB_HOST
         value: yamanote.proxy.rlwy.net
       - key: DB_NAME
@@ -26,6 +20,12 @@ services:
         value: eZkXltxHmZcJPrredZqdnxPXxfmWnfgH
       - key: MYSQL_PORT
         value: 30123
+      - key: DB_DRIVER
+        value: mysql
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
       - key: UPLOAD_DIR
         value: public/uploads
       - key: UPLOAD_MAX_SIZE
