@@ -3,6 +3,7 @@ FROM php:8.2-apache
 
 # Active les modules Apache nécessaires
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 # Copie le code source dans le conteneur
 COPY . /var/www/html
