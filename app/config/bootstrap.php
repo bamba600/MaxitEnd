@@ -3,6 +3,7 @@ use App\Core\App;
 use App\Core\Session;
 use App\Core\Database;
 use App\Config\Env;
+use App\Config\Config;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
