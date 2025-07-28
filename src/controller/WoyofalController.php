@@ -10,13 +10,14 @@ class WoyofalController extends AbstractController
 {
     private CompteRepository $compteRepository;
     private TransactionService $transactionService;
-    private string $woyofalApiUrl = 'http://localhost:8000/api/achat/acheter';
+    private string $woyofalApiUrl;
 
     public function __construct()
     {
         parent::__construct();
         $this->compteRepository = new CompteRepository();
         $this->transactionService = new TransactionService();
+        $this->woyofalApiUrl = rtrim(getenv('AUTH_URL') ?: (\App\Config\Env::get('AUTH_URL', 'https://appwoyofal-qljz.onrender.com')), '/') . '/api/achat/acheter';
     }
 
     /**
