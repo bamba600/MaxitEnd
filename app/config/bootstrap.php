@@ -11,13 +11,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 try {
     Env::load();
 } catch (Exception $e) {
-    // Fallback sur Dotenv si notre système échoue
-    if (class_exists('Dotenv\\Dotenv')) {
-        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
-        $dotenv->load();
-    } else {
-        die("Erreur : Impossible de charger les variables d'environnement - " . $e->getMessage());
-    }
+    // Render : utilise les variables Render directement
+    error_log("Info: .env non chargé, les variables d'environnement Render seront utilisées.");
 }
 
 // Charger la configuration
