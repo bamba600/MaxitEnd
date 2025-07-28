@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Config;
+
 use App\Config\Env;
 
 /**
