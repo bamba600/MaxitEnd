@@ -70,5 +70,4 @@ abstract class AbstractController
         return $this->authService->userId();
     }
 }
-?>
 
