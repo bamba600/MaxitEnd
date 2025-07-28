@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Config;
+
+use Exception;
+
 /**
  * Gestionnaire des variables d'environnement
  * Charge et parse le fichier .env
@@ -19,13 +23,13 @@ class Env
         }
 
         $envFile = $path ?? dirname(__DIR__, 2) . '/.env';
-        
+
         if (!file_exists($envFile)) {
             throw new Exception("Fichier .env non trouvé : {$envFile}");
         }
 
         $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        
+
         foreach ($lines as $line) {
             // Ignorer les commentaires
             if (strpos(trim($line), '#') === 0) {
@@ -37,22 +41,22 @@ class Env
                 list($name, $value) = explode('=', $line, 2);
                 $name = trim($name);
                 $value = trim($value);
-                
+
                 // Supprimer les guillemets si présents
                 if (preg_match('/^"(.*)"$/', $value, $matches)) {
                     $value = $matches[1];
                 } elseif (preg_match("/^'(.*)'$/", $value, $matches)) {
                     $value = $matches[1];
                 }
-                
+
                 self::$variables[$name] = $value;
-                
+
                 // Définir aussi dans $_ENV et putenv
                 $_ENV[$name] = $value;
                 putenv("{$name}={$value}");
             }
         }
-        
+
         self::$loaded = true;
     }
 
@@ -64,7 +68,7 @@ class Env
         if (!self::$loaded) {
             self::load();
         }
-        
+
         return self::$variables[$key] ?? $_ENV[$key] ?? getenv($key) ?? $default;
     }
 
@@ -76,7 +80,7 @@ class Env
         if (!self::$loaded) {
             self::load();
         }
-        
+
         return isset(self::$variables[$key]) || isset($_ENV[$key]) || getenv($key) !== false;
     }
 
@@ -88,7 +92,7 @@ class Env
         if (!self::$loaded) {
             self::load();
         }
-        
+
         return self::$variables;
     }
 
