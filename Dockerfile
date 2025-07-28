@@ -15,7 +15,7 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 RUN sed -ri -e 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf
 
 # Installe les extensions PHP nécessaires (exemple : mysqli, pdo_mysql)
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql pdo_pgsql pgsql
 
 # Expose le port 8080 (Render utilise ce port)
 EXPOSE 8080

@@ -22,7 +22,7 @@ $config = require_once __DIR__ . '/config.php';
 $driver = Env::get('DB_DRIVER', 'mysql');
 if ($driver === 'mysql') {
     define('DB_HOST', Env::get('DB_HOST', 'localhost'));
-    define('DB_NAME', Env::get('DB_NAME', 'maxit'));
+    define('DB_NAME', Env::get('DB_NAME', 'railway'));
     define('DB_USER', Env::get('DB_USER', 'root'));
     define('DB_PASS', Env::get('DB_PASS', ''));
     define('DB_DRIVER', 'mysql');

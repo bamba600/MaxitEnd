@@ -14,13 +14,13 @@ Env::load();
 return [
     // Base de données
     'database' => [
-        'default' => Env::get('DB_DRIVER', 'pgsql'),
+        'default' => Env::get('DB_DRIVER', 'mysql'),
         'connections' => [
             'mysql' => [
                 'driver' => 'mysql',
                 'host' => Env::get('DB_HOST', 'localhost'),
                 'port' => Env::get('MYSQL_PORT', '3306'),
-                'database' => Env::get('DB_NAME', 'maxit'),
+                'database' => Env::get('DB_NAME', 'railway'),
                 'username' => Env::get('DB_USER', 'root'),
                 'password' => Env::get('DB_PASS', ''),
                 'charset' => Env::get('MYSQL_CHARSET', 'utf8mb4'),

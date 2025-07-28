@@ -22,7 +22,7 @@ class Database
             if ($driver === 'mysql') {
                 $host = Env::get('DB_HOST', 'localhost');
                 $port = Env::get('MYSQL_PORT', '3306');
-                $dbname = Env::get('DB_NAME', 'maxit');
+                $dbname = Env::get('DB_NAME', 'railway');
                 $user = Env::get('DB_USER', 'root');
                 $pass = Env::get('DB_PASS', '');
                 $charset = Env::get('MYSQL_CHARSET', 'utf8mb4');
